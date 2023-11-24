@@ -12,37 +12,37 @@ public class ProductController {
     @Autowired
     private ProductService service;
 
-    @PostMapping("/addProduct")
+    @PostMapping("api/addProduct")
     public Product addProduct(@RequestBody Product product) {
         return service.saveProduct(product);
     }
 
-    @PostMapping("/x")
+    @PostMapping("api/addProducts")
     public List<Product> addProducts(@RequestBody List<Product> products) {
         return service.saveProducts(products);
     }
 
-    @GetMapping("/getProducts")
+    @GetMapping("api/getProducts")
     public List<Product> getProducts() {
         return service.getProducts();
     }
 
-    @GetMapping("/getProduct/{id}")
+    @GetMapping("api/getProduct/{id}")
     public Product getProductById(@PathVariable int id) {
         return service.getProductById(id);
     }
 
-    @GetMapping("/findProductByName/{name}")
+    @GetMapping("api/findProductByName/{name}")
     public Product findProductByName(@PathVariable String name) {
         return service.getProductByName(name);
     }
 
-    @PutMapping("/updateProduct")
+    @PutMapping("api/updateProduct")
     public Product updateProduct(@RequestBody Product product) {
         return service.updateProduct(product);
     }
 
-    @DeleteMapping("/deleteProduct/{id}")
+    @DeleteMapping("api/deleteProduct/{id}")
     public String deleteProduct(@PathVariable int id) {
         return service.deleteProduct(id);
     }
